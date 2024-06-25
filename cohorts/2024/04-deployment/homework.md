@@ -98,7 +98,8 @@ Finally, we'll package the script in the docker container.
 For that, you'll need to use a base image that we prepared. 
 
 This is what the content of this image is:
-```
+
+```dockerfile
 FROM python:3.10.13-slim
 
 WORKDIR /app
@@ -107,12 +108,12 @@ COPY [ "model2.bin", "model.bin" ]
 
 Note: you don't need to run it. We have already done it.
 
-It is pushed it to [`agrigorev/zoomcamp-model:mlops-2024-3.10.13-slim`](https://hub.docker.com/layers/agrigorev/zoomcamp-model/mlops-2024-3.10.13-slim/images/sha256-f54535b73a8c3ef91967d5588de57d4e251b22addcbbfb6e71304a91c1c7027f?context=repo),
+It is pushed to [`agrigorev/zoomcamp-model:mlops-2024-3.10.13-slim`](https://hub.docker.com/layers/agrigorev/zoomcamp-model/mlops-2024-3.10.13-slim/images/sha256-f54535b73a8c3ef91967d5588de57d4e251b22addcbbfb6e71304a91c1c7027f?context=repo),
 which you need to use as your base image.
 
 That is, your Dockerfile should start with:
 
-```docker
+```dockerfile
 FROM agrigorev/zoomcamp-model:mlops-2024-3.10.13-slim
 
 # do stuff here
